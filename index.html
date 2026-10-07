@@ -13,12 +13,25 @@
             padding: 0;
         }
 
+        html {
+            scroll-behavior: smooth;
+        }
+
         body {
             min-height: 100vh;
             background:
-                radial-gradient(circle at 20% 20%, rgba(255, 143, 194, 0.18), transparent 30%),
-                radial-gradient(circle at 80% 80%, rgba(255, 105, 180, 0.15), transparent 30%),
+                radial-gradient(
+                    circle at 20% 20%,
+                    rgba(255, 143, 194, 0.18),
+                    transparent 30%
+                ),
+                radial-gradient(
+                    circle at 80% 80%,
+                    rgba(255, 105, 180, 0.15),
+                    transparent 30%
+                ),
                 #100b14;
+
             color: #fff;
             font-family: "Courier New", monospace;
             overflow-x: hidden;
@@ -30,6 +43,7 @@
             position: fixed;
             inset: 0;
             pointer-events: none;
+
             background:
                 linear-gradient(
                     135deg,
@@ -37,6 +51,8 @@
                     rgba(255, 105, 180, 0.04) 50%,
                     transparent 100%
                 );
+
+            z-index: 0;
         }
 
         .screen {
@@ -44,19 +60,26 @@
             display: flex;
             align-items: center;
             justify-content: center;
+
             padding: 25px;
             position: relative;
+            z-index: 1;
         }
 
         .terminal {
             width: min(720px, 100%);
+
             padding: 22px;
+
             border: 1px solid rgba(255, 154, 207, 0.35);
             border-radius: 18px;
+
             background: rgba(24, 15, 27, 0.82);
+
             box-shadow:
                 0 0 35px rgba(255, 105, 180, 0.12),
                 inset 0 0 25px rgba(255, 105, 180, 0.03);
+
             backdrop-filter: blur(10px);
         }
 
@@ -64,91 +87,143 @@
             display: flex;
             align-items: center;
             gap: 7px;
+
             padding-bottom: 18px;
-            border-bottom: 1px solid rgba(255, 154, 207, 0.15);
+
+            border-bottom:
+                1px solid rgba(255, 154, 207, 0.15);
         }
 
         .dot {
             width: 11px;
             height: 11px;
+
             border-radius: 50%;
+
             background: #ff8fc2;
-            box-shadow: 0 0 10px rgba(255, 143, 194, 0.6);
+
+            box-shadow:
+                0 0 10px rgba(255, 143, 194, 0.6);
         }
 
         .terminal-title {
             margin-left: 8px;
+
             color: #d9a7c5;
+
             font-size: 12px;
             letter-spacing: 1px;
         }
 
         .content {
             text-align: center;
+
             padding: 55px 20px 45px;
         }
 
         .system {
             color: #ff9dcc;
+
             font-size: 12px;
             letter-spacing: 2px;
+
             margin-bottom: 28px;
+
             opacity: 0.9;
         }
 
         .cake {
             font-size: 58px;
+
             margin-bottom: 20px;
+
             animation: float 3s ease-in-out infinite;
-            filter: drop-shadow(0 0 12px rgba(255, 143, 194, 0.5));
+
+            filter:
+                drop-shadow(
+                    0 0 12px rgba(255, 143, 194, 0.5)
+                );
         }
 
         h1 {
             font-family: Georgia, serif;
+
             font-size: clamp(38px, 9vw, 72px);
+
             font-weight: 400;
+
             letter-spacing: 5px;
+
             margin-bottom: 6px;
+
             color: #fff3fa;
-            text-shadow: 0 0 25px rgba(255, 143, 194, 0.35);
+
+            text-shadow:
+                0 0 25px rgba(255, 143, 194, 0.35);
         }
 
         .name {
             color: #ff9dcc;
+
             font-family: Georgia, serif;
+
             font-size: clamp(30px, 7vw, 52px);
+
             letter-spacing: 8px;
+
             margin-bottom: 30px;
         }
 
         .message {
             color: #d9c5d2;
+
             font-family: Georgia, serif;
+
             font-size: 17px;
+
             font-style: italic;
+
             margin-bottom: 38px;
+
             line-height: 1.7;
         }
 
         .button {
             border: 1px solid #ff9dcc;
-            background: rgba(255, 143, 194, 0.08);
+
+            background:
+                rgba(255, 143, 194, 0.08);
+
             color: #ffb4d7;
+
             padding: 15px 30px;
+
             border-radius: 999px;
+
             font-family: "Courier New", monospace;
+
             font-size: 14px;
+
             letter-spacing: 2px;
+
             cursor: pointer;
-            transition: 0.3s ease;
+
+            transition:
+                0.3s ease;
+
             margin: 6px;
         }
 
         .button:hover {
             background: #ff9dcc;
+
             color: #1a0d15;
-            box-shadow: 0 0 25px rgba(255, 143, 194, 0.45);
-            transform: translateY(-2px);
+
+            box-shadow:
+                0 0 25px rgba(255, 143, 194, 0.45);
+
+            transform:
+                translateY(-2px);
         }
 
         .button:disabled {
@@ -157,7 +232,9 @@
 
         .status {
             margin-top: 35px;
+
             font-size: 11px;
+
             color: #907986;
         }
 
@@ -167,17 +244,117 @@
 
         .heart {
             position: fixed;
+
             bottom: -30px;
+
             color: #ff9dcc;
+
             opacity: 0;
+
             pointer-events: none;
-            animation: rise linear forwards;
+
+            animation:
+                rise linear forwards;
+
             z-index: 0;
         }
 
+        .memory-image {
+            width: min(90%, 500px);
+
+            max-height: 520px;
+
+            object-fit: cover;
+
+            border-radius: 16px;
+
+            border:
+                1px solid #ff8fc7;
+
+            box-shadow:
+                0 0 30px rgba(255, 143, 199, 0.25);
+
+            margin: 20px auto;
+
+            display: block;
+        }
+
+        .zoom-image-container {
+            width: 100%;
+            max-width: 360px;
+            height: 360px;
+
+            margin: 25px auto;
+
+            overflow: hidden;
+
+            border-radius: 15px;
+        }
+
+        .zoom-image {
+            width: 100%;
+            height: 100%;
+
+            object-fit: cover;
+        }
+
+        .choices {
+            display: grid;
+
+            grid-template-columns:
+                repeat(
+                    2,
+                    minmax(120px, 1fr)
+                );
+
+            gap: 12px;
+
+            width: min(90%, 420px);
+
+            margin: 20px auto;
+        }
+
+        .long-letter {
+            max-width: 620px;
+
+            margin: 0 auto;
+
+            color: #d9c5d2;
+
+            font-family: Georgia, serif;
+
+            font-size: 17px;
+
+            font-style: italic;
+
+            line-height: 1.8;
+
+            text-align: center;
+        }
+
+        .success {
+            color: #ff8fb8;
+
+            font-size: 18px;
+
+            margin: 15px 0;
+        }
+
+        .final-love {
+            color: #ff77ad;
+
+            font-size: 22px;
+
+            font-weight: bold;
+        }
+
         @keyframes rise {
+
             0% {
-                transform: translateY(0) rotate(0deg);
+                transform:
+                    translateY(0)
+                    rotate(0deg);
+
                 opacity: 0;
             }
 
@@ -186,22 +363,57 @@
             }
 
             100% {
-                transform: translateY(-110vh) rotate(25deg);
+                transform:
+                    translateY(-110vh)
+                    rotate(25deg);
+
                 opacity: 0;
             }
         }
 
         @keyframes float {
-            0%, 100% {
-                transform: translateY(0);
+
+            0%,
+            100% {
+                transform:
+                    translateY(0);
             }
 
             50% {
-                transform: translateY(-8px);
+                transform:
+                    translateY(-8px);
             }
         }
 
+        @keyframes fadeIn {
+
+            from {
+                opacity: 0;
+                transform:
+                    translateY(10px);
+            }
+
+            to {
+                opacity: 1;
+                transform:
+                    translateY(0);
+            }
+        }
+
+        .content > * {
+            animation:
+                fadeIn 0.6s ease;
+        }
+
         @media (max-width: 600px) {
+
+            .screen {
+                padding: 15px;
+                align-items: flex-start;
+                padding-top: 20px;
+                padding-bottom: 20px;
+            }
+
             .terminal {
                 padding: 15px;
             }
@@ -222,27 +434,120 @@
                 width: 90%;
                 max-width: 350px;
             }
+
+            .choices {
+                grid-template-columns: 1fr;
+                width: 90%;
+            }
+
+            .message,
+            .long-letter {
+                font-size: 16px;
+            }
+
+            .zoom-image-container {
+                width: 90%;
+                height: 300px;
+            }
         }
     </style>
 </head>
 
 <body>
 
-    <main class="screen">
+    <main id="app"></main>
 
-        <section class="terminal">
+    <script>
 
-            <div class="terminal-top">
-                <div class="dot"></div>
-                <div class="dot"></div>
-                <div class="dot"></div>
+        /* =====================================================
+           APP
+        ===================================================== */
 
-                <div class="terminal-title">
-                    birthday_surprise.exe
+        const app = document.getElementById("app");
+
+
+        /* =====================================================
+           FLOATING HEARTS
+        ===================================================== */
+
+        function createHeart() {
+
+            const heart =
+                document.createElement("div");
+
+            heart.className = "heart";
+
+            heart.innerHTML =
+                Math.random() > 0.5
+                    ? "♡"
+                    : "♥";
+
+            heart.style.left =
+                Math.random() * 100 + "vw";
+
+            heart.style.fontSize =
+                (12 + Math.random() * 16) + "px";
+
+            heart.style.animationDuration =
+                (7 + Math.random() * 7) + "s";
+
+            document.body.appendChild(heart);
+
+            setTimeout(() => {
+
+                heart.remove();
+
+            }, 15000);
+        }
+
+        setInterval(createHeart, 900);
+
+
+        /* =====================================================
+           TERMINAL WRAPPER
+        ===================================================== */
+
+        function render(content) {
+
+            app.innerHTML = `
+
+                <div class="screen">
+
+                    <section class="terminal">
+
+                        <div class="terminal-top">
+
+                            <div class="dot"></div>
+                            <div class="dot"></div>
+                            <div class="dot"></div>
+
+                            <div class="terminal-title">
+                                birthday_surprise.exe
+                            </div>
+
+                        </div>
+
+                        <div class="content">
+
+                            ${content}
+
+                        </div>
+
+                    </section>
+
                 </div>
-            </div>
 
-            <div class="content">
+            `;
+        }
+
+
+        /* =====================================================
+           START SCREEN
+        ===================================================== */
+
+        function showHome() {
+
+            render(`
 
                 <div class="system">
                     &lt; BIRTHDAY SYSTEM ONLINE /&gt;
@@ -264,133 +569,122 @@
                     I made something for you. ♡
                 </p>
 
-                <button class="button" id="startButton">
+                <button
+                    class="button"
+                    id="startButton"
+                >
                     INITIALIZE ♡
                 </button>
 
                 <div class="status">
+
                     system.status:
                     <span>ready</span>
+
                 </div>
 
-            </div>
+            `);
 
-        </section>
-
-    </main>
-
-
-    <script>
-
-        /* =====================================================
-           FLOATING HEARTS
-        ===================================================== */
-
-        function createHeart() {
-
-            const heart = document.createElement("div");
-
-            heart.className = "heart";
-
-            heart.innerHTML = Math.random() > 0.5 ? "♡" : "♥";
-
-            heart.style.left = Math.random() * 100 + "vw";
-
-            heart.style.fontSize =
-                (12 + Math.random() * 16) + "px";
-
-            heart.style.animationDuration =
-                (7 + Math.random() * 7) + "s";
-
-            document.body.appendChild(heart);
-
-            setTimeout(() => {
-                heart.remove();
-            }, 15000);
+            document
+                .getElementById("startButton")
+                .addEventListener(
+                    "click",
+                    startBirthday
+                );
         }
 
-        setInterval(createHeart, 900);
+
+        /* =====================================================
+           START
+        ===================================================== */
+
+        function startBirthday() {
+
+            const button =
+                document.getElementById(
+                    "startButton"
+                );
+
+            button.innerHTML =
+                "LOADING...";
+
+            button.disabled = true;
+
+            setTimeout(() => {
+
+                showWelcome();
+
+            }, 700);
+        }
 
 
         /* =====================================================
-           START BUTTON
+           WELCOME
         ===================================================== */
 
-        document
-            .getElementById("startButton")
-            .addEventListener("click", function () {
+        function showWelcome() {
 
-                this.innerHTML = "LOADING...";
-                this.disabled = true;
+            render(`
 
-                setTimeout(() => {
+                <div class="system">
+                    &lt; ACCESS GRANTED /&gt;
+                </div>
 
-                    document.body.innerHTML = `
+                <div class="cake">
+                    ♡
+                </div>
 
-                        <div class="screen">
+                <h1
+                    style="
+                        font-size:
+                        clamp(32px, 7vw, 55px);
+                    "
+                >
+                    WELCOME, AKI
+                </h1>
 
-                            <section class="terminal">
+                <p class="message">
 
-                                <div class="terminal-top">
-                                    <div class="dot"></div>
-                                    <div class="dot"></div>
-                                    <div class="dot"></div>
+                    Since I can't be there
+                    to celebrate with you today...
 
-                                    <div class="terminal-title">
-                                        birthday_surprise.exe
-                                    </div>
-                                </div>
+                    <br><br>
 
-                                <div class="content">
+                    I wanted to make something
+                    a little different.
 
-                                    <div class="system">
-                                        &lt; ACCESS GRANTED /&gt;
-                                    </div>
+                </p>
 
-                                    <div class="cake">
-                                        ♡
-                                    </div>
+                <p class="message">
 
-                                    <h1 style="font-size: clamp(32px, 7vw, 55px);">
-                                        WELCOME, AKI
-                                    </h1>
+                    So I made you
+                    a little birthday game. ♡
 
-                                    <p class="message">
-                                        Since I can't be there to celebrate
-                                        with you today...
-                                        <br><br>
-                                        I wanted to make something
-                                        a little different.
-                                    </p>
+                </p>
 
-                                    <p class="message">
-                                        So I made you a little birthday game. ♡
-                                    </p>
+                <button
+                    class="button"
+                    id="gameButton"
+                >
+                    START GAME →
+                </button>
 
-                                    <button class="button" id="gameButton">
-                                        START GAME →
-                                    </button>
+                <div class="status">
 
-                                    <div class="status">
-                                        system.status:
-                                        <span>waiting for player</span>
-                                    </div>
+                    system.status:
+                    <span>waiting for player</span>
 
-                                </div>
+                </div>
 
-                            </section>
+            `);
 
-                        </div>
-
-                    `;
-
-                    document
-                        .getElementById("gameButton")
-                        .addEventListener("click", showMemory1);
-
-                }, 700);
-
-            });
+            document
+                .getElementById("gameButton")
+                .addEventListener(
+                    "click",
+                    showMemory1
+                );
+        }
 
 
         /* =====================================================
@@ -399,158 +693,152 @@
 
         function showMemory1() {
 
-            document.body.innerHTML = `
+            render(`
 
-                <div class="screen">
+                <div class="system">
+                    &lt; MEMORY DATABASE /&gt;
+                </div>
 
-                    <section class="terminal">
+                <p class="message">
+                    MEMORY 01 / 05
+                </p>
 
-                        <div class="terminal-top">
-                            <div class="dot"></div>
-                            <div class="dot"></div>
-                            <div class="dot"></div>
+                <h1
+                    style="
+                        font-size:
+                        clamp(28px, 6vw, 48px);
+                    "
+                >
+                    OUR FIRST MEET ♡
+                </h1>
 
-                            <div class="terminal-title">
-                                birthday_surprise.exe
-                            </div>
-                        </div>
+                <img
+                    src="memory1.jpg"
+                    alt="Our first meet"
+                    class="memory-image"
+                >
 
-                        <div class="content">
+                <p class="message">
+                    Do you remember when this happened?
+                </p>
 
-                            <div class="system">
-                                &lt; MEMORY DATABASE /&gt;
-                            </div>
+                <div class="choices">
 
-                            <p class="message">
-                                MEMORY 01 / 05
-                            </p>
+                    <button
+                        class="button answer"
+                        data-correct="false"
+                    >
+                        JANUARY
+                    </button>
 
-                            <h1 style="font-size: clamp(28px, 6vw, 48px);">
-                                OUR FIRST MEET ♡
-                            </h1>
+                    <button
+                        class="button answer"
+                        data-correct="true"
+                    >
+                        FEBRUARY
+                    </button>
 
-                            <img
-                                src="memory1.jpg"
-                                alt="Our first meet"
-                                style="
-                                    width: min(90%, 500px);
-                                    max-height: 520px;
-                                    object-fit: cover;
-                                    border-radius: 16px;
-                                    border: 1px solid #ff8fc7;
-                                    box-shadow: 0 0 30px rgba(255, 143, 199, 0.25);
-                                    margin: 20px auto;
-                                    display: block;
-                                "
-                            >
+                    <button
+                        class="button answer"
+                        data-correct="false"
+                    >
+                        MARCH
+                    </button>
 
-                            <p class="message">
-                                Do you remember when this happened?
-                            </p>
-
-                            <div style="
-                                display: grid;
-                                grid-template-columns: repeat(2, minmax(120px, 1fr));
-                                gap: 12px;
-                                width: min(90%, 420px);
-                                margin: 20px auto;
-                            ">
-
-                                <button class="button answer" data-correct="false">
-                                    JANUARY
-                                </button>
-
-                                <button class="button answer" data-correct="true">
-                                    FEBRUARY
-                                </button>
-
-                                <button class="button answer" data-correct="false">
-                                    MARCH
-                                </button>
-
-                                <button class="button answer" data-correct="false">
-                                    APRIL
-                                </button>
-
-                            </div>
-
-                            <div id="result"></div>
-
-                        </div>
-
-                    </section>
+                    <button
+                        class="button answer"
+                        data-correct="false"
+                    >
+                        APRIL
+                    </button>
 
                 </div>
 
-            `;
+                <div id="result"></div>
+
+            `);
 
             const answers =
-                document.querySelectorAll(".answer");
+                document.querySelectorAll(
+                    ".answer"
+                );
 
             const result =
-                document.getElementById("result");
+                document.getElementById(
+                    "result"
+                );
 
             answers.forEach(button => {
 
-                button.addEventListener("click", function () {
+                button.addEventListener(
+                    "click",
+                    function () {
 
-                    if (this.dataset.correct === "true") {
+                        if (
+                            this.dataset.correct
+                            === "true"
+                        ) {
 
-                        result.innerHTML = `
+                            answers.forEach(btn => {
 
-                            <p style="
-                                color: #ff9ccc;
-                                font-size: 18px;
-                            ">
-                                ✓ MEMORY RECOVERED
-                            </p>
+                                btn.disabled = true;
+                                btn.style.opacity = "0.5";
 
-                            <p class="message">
-                                February 17. ♡
-                                <br>
-                                The day we finally met.
-                            </p>
+                            });
 
-                            <button class="button" id="nextMemory">
-                                NEXT MEMORY →
-                            </button>
+                            this.style.opacity = "1";
 
-                        `;
+                            result.innerHTML = `
 
-                        answers.forEach(btn => {
-                            btn.disabled = true;
-                            btn.style.opacity = "0.5";
-                        });
+                                <p class="success">
+                                    ✓ MEMORY RECOVERED
+                                </p>
 
-                        this.style.opacity = "1";
+                                <p class="message">
 
-                        document
-                            .getElementById("nextMemory")
-                            .addEventListener("click", showMemory2);
+                                    February 17. ♡
+                                    <br>
+                                    The day we finally met.
 
-                    } else {
+                                </p>
 
-                        result.innerHTML = `
+                                <button
+                                    class="button"
+                                    id="nextMemory"
+                                >
+                                    NEXT MEMORY →
+                                </button>
 
-                            <p style="
-                                color: #ff8fb8;
-                                font-size: 18px;
-                            ">
-                                ✗ NOT QUITE...
-                            </p>
+                            `;
 
-                            <p class="message">
-                                Hmm. Try again. ♡
-                            </p>
+                            document
+                                .getElementById(
+                                    "nextMemory"
+                                )
+                                .addEventListener(
+                                    "click",
+                                    showMemory2
+                                );
 
-                        `;
+                        } else {
+
+                            result.innerHTML = `
+
+                                <p class="success">
+                                    ✗ NOT QUITE...
+                                </p>
+
+                                <p class="message">
+                                    Hmm. Try again. ♡
+                                </p>
+
+                            `;
+                        }
 
                     }
-
-                });
+                );
 
             });
-
         }
 
 
@@ -560,195 +848,202 @@
 
         function showMemory2() {
 
-            document.body.innerHTML = `
+            render(`
 
-                <div class="screen">
+                <div class="system">
+                    MEMORY 02 / 05
+                </div>
 
-                    <div class="terminal">
+                <h1>
+                    A SPECIAL DAY ♡
+                </h1>
 
-                        <div class="terminal-top">
-                            <div class="dot"></div>
-                            <div class="dot"></div>
-                            <div class="dot"></div>
+                <p class="message">
 
-                            <div class="terminal-title">
-                                birthday_surprise.exe
-                            </div>
-                        </div>
+                    MEMORY FILE PARTIALLY ENCRYPTED...
 
-                        <div class="content">
+                    <br>
 
-                            <div class="system">
-                                MEMORY 02 / 05
-                            </div>
+                    Identify the occasion
+                    to recover it.
 
-                            <h1>
-                                A SPECIAL DAY ♡
-                            </h1>
+                </p>
 
-                            <p class="message">
-                                MEMORY FILE PARTIALLY ENCRYPTED...
-                                <br>
-                                Identify the occasion to recover it.
-                            </p>
+                <div class="zoom-image-container">
 
-                            <div style="
-                                width: 100%;
-                                max-width: 360px;
-                                height: 360px;
-                                margin: 25px auto;
-                                overflow: hidden;
-                                border-radius: 15px;
-                            ">
-
-                                <img
-                                    src="memory2.jpg"
-                                    alt="Memory 2"
-                                    style="
-                                        width: 100%;
-                                        height: 100%;
-                                        object-fit: cover;
-                                        transform: scale(1.8);
-                                    "
-                                >
-
-                            </div>
-
-                            <p class="message">
-                                WHAT WAS THIS SPECIAL DAY?
-                            </p>
-
-                            <div id="memory2Choices">
-
-                                <button class="button memory2Choice">
-                                    RECOGNITION
-                                </button>
-
-                                <button class="button memory2Choice">
-                                    PAPA'S DEATH ANNIVERSARY
-                                </button>
-
-                                <button class="button memory2Choice">
-                                    ORDINARY VISIT
-                                </button>
-
-                                <button class="button memory2Choice">
-                                    BIRTHDAY
-                                </button>
-
-                            </div>
-
-                            <div id="memory2Result"></div>
-
-                        </div>
-
-                    </div>
+                    <img
+                        src="memory2.jpg"
+                        alt="Memory 2"
+                        class="zoom-image"
+                        style="
+                            transform:
+                            scale(1.8);
+                        "
+                    >
 
                 </div>
 
-            `;
+                <p class="message">
+                    WHAT WAS THIS SPECIAL DAY?
+                </p>
+
+                <div id="memory2Choices">
+
+                    <button
+                        class="button memory2Choice"
+                    >
+                        RECOGNITION
+                    </button>
+
+                    <button
+                        class="button memory2Choice"
+                    >
+                        PAPA'S DEATH ANNIVERSARY
+                    </button>
+
+                    <button
+                        class="button memory2Choice"
+                    >
+                        ORDINARY VISIT
+                    </button>
+
+                    <button
+                        class="button memory2Choice"
+                    >
+                        BIRTHDAY
+                    </button>
+
+                </div>
+
+                <div id="memory2Result"></div>
+
+            `);
 
             const choices =
-                document.querySelectorAll(".memory2Choice");
+                document.querySelectorAll(
+                    ".memory2Choice"
+                );
 
             const result =
-                document.getElementById("memory2Result");
+                document.getElementById(
+                    "memory2Result"
+                );
 
             choices.forEach(choice => {
 
-                choice.addEventListener("click", function () {
+                choice.addEventListener(
+                    "click",
+                    function () {
 
-                    if (this.innerText === "RECOGNITION") {
+                        if (
+                            this.innerText
+                            === "RECOGNITION"
+                        ) {
 
-                        choices.forEach(btn => {
-                            btn.disabled = true;
-                            btn.style.opacity = "0.5";
-                        });
+                            choices.forEach(btn => {
 
-                        this.style.opacity = "1";
+                                btn.disabled = true;
+                                btn.style.opacity = "0.5";
 
-                        result.innerHTML = `
+                            });
 
-                            <p style="
-                                color: #ff8fb8;
-                                font-size: 18px;
-                            ">
-                                ✓ MEMORY RECOVERED
-                            </p>
+                            this.style.opacity = "1";
 
-                            <img
-                                src="memory2.jpg"
-                                alt="Memory 2 recovered"
-                                style="
-                                    width: 100%;
-                                    max-width: 500px;
-                                    border-radius: 15px;
-                                    margin: 20px auto;
-                                    display: block;
-                                "
-                            >
+                            result.innerHTML = `
 
-                            <p class="message">
+                                <p class="success">
+                                    ✓ MEMORY RECOVERED
+                                </p>
 
-                                May 11. ♡
-                                <br><br>
+                                <img
+                                    src="memory2.jpg"
+                                    alt="Memory 2 recovered"
+                                    class="memory-image"
+                                >
 
-                                This wasn't just my recognition day.
-                                <br><br>
+                                <p class="message">
 
-                                It was the first time I ever brought a guy home.
-                                You met Mama that day, and before we went to school
-                                for my recognition, you insisted on going with me
-                                to visit Papa first.
-                                <br><br>
+                                    May 11. ♡
 
-                                I don't think you know how much that meant to me.
-                                <br><br>
+                                    <br><br>
 
-                                You didn't just want to celebrate my achievement
-                                with me. You also wanted to show respect to someone
-                                who was important to me.
-                                <br><br>
+                                    This wasn't just
+                                    my recognition day.
 
-                                Thank you for that. ♡
+                                    <br><br>
 
-                            </p>
+                                    It was the first time
+                                    I ever brought a guy home.
 
-                            <button class="button" id="nextMemory2">
-                                NEXT MEMORY →
-                            </button>
+                                    You met Mama that day,
+                                    and before we went to school
+                                    for my recognition,
+                                    you insisted on going with me
+                                    to visit Papa first.
 
-                        `;
+                                    <br><br>
 
-                        document
-                            .getElementById("nextMemory2")
-                            .addEventListener("click", showMemory3);
+                                    I don't think you know
+                                    how much that meant to me.
 
-                    } else {
+                                    <br><br>
 
-                        result.innerHTML = `
+                                    You didn't just want
+                                    to celebrate my achievement
+                                    with me.
 
-                            <p style="
-                                color: #ff8fb8;
-                                font-size: 18px;
-                            ">
-                                ✗ NOT QUITE...
-                            </p>
+                                    You also wanted to show respect
+                                    to someone who was important to me.
 
-                            <p class="message">
-                                Look closely...
-                                <br>
-                                You know this one. ♡
-                            </p>
+                                    <br><br>
 
-                        `;
+                                    Thank you for that. ♡
+
+                                </p>
+
+                                <button
+                                    class="button"
+                                    id="nextMemory2"
+                                >
+                                    NEXT MEMORY →
+                                </button>
+
+                            `;
+
+                            document
+                                .getElementById(
+                                    "nextMemory2"
+                                )
+                                .addEventListener(
+                                    "click",
+                                    showMemory3
+                                );
+
+                        } else {
+
+                            result.innerHTML = `
+
+                                <p class="success">
+                                    ✗ NOT QUITE...
+                                </p>
+
+                                <p class="message">
+
+                                    Look closely...
+
+                                    <br>
+
+                                    You know this one. ♡
+
+                                </p>
+
+                            `;
+                        }
 
                     }
-
-                });
+                );
 
             });
-
         }
 
 
@@ -758,197 +1053,205 @@
 
         function showMemory3() {
 
-            document.body.innerHTML = `
+            render(`
 
-                <div class="screen">
+                <div class="system">
+                    MEMORY 03 / 05
+                </div>
 
-                    <div class="terminal">
+                <h1>
+                    A DAY WORTH REMEMBERING ♡
+                </h1>
 
-                        <div class="terminal-top">
-                            <div class="dot"></div>
-                            <div class="dot"></div>
-                            <div class="dot"></div>
+                <p class="message">
 
-                            <div class="terminal-title">
-                                birthday_surprise.exe
-                            </div>
-                        </div>
+                    MEMORY FILE PARTIALLY ENCRYPTED...
 
-                        <div class="content">
+                    <br>
 
-                            <div class="system">
-                                MEMORY 03 / 05
-                            </div>
+                    Identify the month
+                    to recover it.
 
-                            <h1>
-                                A DAY WORTH REMEMBERING ♡
-                            </h1>
+                </p>
 
-                            <p class="message">
-                                MEMORY FILE PARTIALLY ENCRYPTED...
-                                <br>
-                                Identify the month to recover it.
-                            </p>
+                <div class="zoom-image-container">
 
-                            <div style="
-                                width: 100%;
-                                max-width: 360px;
-                                height: 360px;
-                                margin: 25px auto;
-                                overflow: hidden;
-                                border-radius: 15px;
-                            ">
-
-                                <img
-                                    src="memory3.jpg"
-                                    alt="Memory 3"
-                                    style="
-                                        width: 100%;
-                                        height: 100%;
-                                        object-fit: cover;
-                                        transform: scale(2.2);
-                                    "
-                                >
-
-                            </div>
-
-                            <p class="message">
-                                WHICH MONTH WAS THIS?
-                            </p>
-
-                            <div id="memory3Choices">
-
-                                <button class="button memory3Choice">
-                                    JANUARY
-                                </button>
-
-                                <button class="button memory3Choice">
-                                    FEBRUARY
-                                </button>
-
-                                <button class="button memory3Choice">
-                                    MARCH
-                                </button>
-
-                                <button class="button memory3Choice">
-                                    APRIL
-                                </button>
-
-                            </div>
-
-                            <div id="memory3Result"></div>
-
-                        </div>
-
-                    </div>
+                    <img
+                        src="memory3.jpg"
+                        alt="Memory 3"
+                        class="zoom-image"
+                        style="
+                            transform:
+                            scale(2.2);
+                        "
+                    >
 
                 </div>
 
-            `;
+                <p class="message">
+                    WHICH MONTH WAS THIS?
+                </p>
+
+                <div id="memory3Choices">
+
+                    <button
+                        class="button memory3Choice"
+                    >
+                        JANUARY
+                    </button>
+
+                    <button
+                        class="button memory3Choice"
+                    >
+                        FEBRUARY
+                    </button>
+
+                    <button
+                        class="button memory3Choice"
+                    >
+                        MARCH
+                    </button>
+
+                    <button
+                        class="button memory3Choice"
+                    >
+                        APRIL
+                    </button>
+
+                </div>
+
+                <div id="memory3Result"></div>
+
+            `);
 
             const choices =
-                document.querySelectorAll(".memory3Choice");
+                document.querySelectorAll(
+                    ".memory3Choice"
+                );
 
             const result =
-                document.getElementById("memory3Result");
+                document.getElementById(
+                    "memory3Result"
+                );
 
             choices.forEach(choice => {
 
-                choice.addEventListener("click", function () {
+                choice.addEventListener(
+                    "click",
+                    function () {
 
-                    if (this.innerText === "MARCH") {
+                        if (
+                            this.innerText
+                            === "MARCH"
+                        ) {
 
-                        choices.forEach(btn => {
-                            btn.disabled = true;
-                            btn.style.opacity = "0.5";
-                        });
+                            choices.forEach(btn => {
 
-                        this.style.opacity = "1";
+                                btn.disabled = true;
+                                btn.style.opacity = "0.5";
 
-                        result.innerHTML = `
+                            });
 
-                            <p style="
-                                color: #ff8fb8;
-                                font-size: 18px;
-                            ">
-                                ✓ MEMORY RECOVERED
-                            </p>
+                            this.style.opacity = "1";
 
-                            <img
-                                src="memory3.jpg"
-                                alt="Memory 3 recovered"
-                                style="
-                                    width: 100%;
-                                    max-width: 500px;
-                                    border-radius: 15px;
-                                    margin: 20px auto;
-                                    display: block;
-                                "
-                            >
+                            result.innerHTML = `
 
-                            <p class="message">
+                                <p class="success">
+                                    ✓ MEMORY RECOVERED
+                                </p>
 
-                                March 11. ♡
-                                <br><br>
+                                <img
+                                    src="memory3.jpg"
+                                    alt="Memory 3 recovered"
+                                    class="memory-image"
+                                >
 
-                                One of the days I'll always remember.
-                                <br><br>
+                                <p class="message">
 
-                                Law school hasn't been easy.
-                                There were days when everything felt
-                                overwhelming, but you were there.
-                                <br><br>
+                                    March 11. ♡
 
-                                Thank you for being there with me
-                                through the difficult days and for
-                                celebrating my achievements with me.
-                                <br><br>
+                                    <br><br>
 
-                                I hope this won't be the last recognition
-                                we'll celebrate together.
-                                <br><br>
+                                    One of the days
+                                    I'll always remember.
 
-                                I hope there will be many more achievements
-                                for both of us — with you beside me.
-                                ♡
+                                    <br><br>
 
-                            </p>
+                                    Law school hasn't been easy.
 
-                            <button class="button" id="nextMemory3">
-                                NEXT MEMORY →
-                            </button>
+                                    There were days when everything
+                                    felt overwhelming,
+                                    but you were there.
 
-                        `;
+                                    <br><br>
 
-                        document
-                            .getElementById("nextMemory3")
-                            .addEventListener("click", showMemory4);
+                                    Thank you for being there with me
+                                    through the difficult days
+                                    and for celebrating my achievements
+                                    with me.
 
-                    } else {
+                                    <br><br>
 
-                        result.innerHTML = `
+                                    I hope this won't be
+                                    the last recognition
+                                    we'll celebrate together.
 
-                            <p style="
-                                color: #ff8fb8;
-                                font-size: 18px;
-                            ">
-                                ✗ NOT QUITE...
-                            </p>
+                                    <br><br>
 
-                            <p class="message">
-                                Think about the day...
-                                <br>
-                                You were there with me. ♡
-                            </p>
+                                    I hope there will be
+                                    many more achievements
+                                    for both of us —
+                                    with you beside me.
 
-                        `;
+                                    <br><br>
+
+                                    ♡
+
+                                </p>
+
+                                <button
+                                    class="button"
+                                    id="nextMemory3"
+                                >
+                                    NEXT MEMORY →
+                                </button>
+
+                            `;
+
+                            document
+                                .getElementById(
+                                    "nextMemory3"
+                                )
+                                .addEventListener(
+                                    "click",
+                                    showMemory4
+                                );
+
+                        } else {
+
+                            result.innerHTML = `
+
+                                <p class="success">
+                                    ✗ NOT QUITE...
+                                </p>
+
+                                <p class="message">
+
+                                    Think about the day...
+
+                                    <br>
+
+                                    You were there with me. ♡
+
+                                </p>
+
+                            `;
+                        }
 
                     }
-
-                });
+                );
 
             });
-
         }
 
 
@@ -958,193 +1261,202 @@
 
         function showMemory4() {
 
-            document.body.innerHTML = `
+            render(`
 
-                <div class="screen">
+                <div class="system">
+                    MEMORY 04 / 05
+                </div>
 
-                    <div class="terminal">
+                <h1>
+                    FAMILY CONNECTION ♡
+                </h1>
 
-                        <div class="terminal-top">
-                            <div class="dot"></div>
-                            <div class="dot"></div>
-                            <div class="dot"></div>
+                <p class="message">
 
-                            <div class="terminal-title">
-                                birthday_surprise.exe
-                            </div>
-                        </div>
+                    MEMORY FILE PARTIALLY ENCRYPTED...
 
-                        <div class="content">
+                    <br>
 
-                            <div class="system">
-                                MEMORY 04 / 05
-                            </div>
+                    Identify what made
+                    this day special.
 
-                            <h1>
-                                FAMILY CONNECTION ♡
-                            </h1>
+                </p>
 
-                            <p class="message">
-                                MEMORY FILE PARTIALLY ENCRYPTED...
-                                <br>
-                                Identify what made this day special.
-                            </p>
+                <div class="zoom-image-container">
 
-                            <div style="
-                                width: 100%;
-                                max-width: 360px;
-                                height: 360px;
-                                margin: 25px auto;
-                                overflow: hidden;
-                                border-radius: 15px;
-                            ">
-
-                                <img
-                                    src="memory4.jpg"
-                                    alt="Memory 4"
-                                    style="
-                                        width: 100%;
-                                        height: 100%;
-                                        object-fit: cover;
-                                        transform: scale(2.8);
-                                    "
-                                >
-
-                            </div>
-
-                            <p class="message">
-                                WHAT MADE THIS DAY SPECIAL?
-                            </p>
-
-                            <div id="memory4Choices">
-
-                                <button class="button memory4Choice">
-                                    OUR FIRST TRIP TOGETHER
-                                </button>
-
-                                <button class="button memory4Choice">
-                                    HE MET MY WHOLE FAMILY
-                                </button>
-
-                                <button class="button memory4Choice">
-                                    OUR FIRST ANNIVERSARY
-                                </button>
-
-                                <button class="button memory4Choice">
-                                    MY GRADUATION
-                                </button>
-
-                            </div>
-
-                            <div id="memory4Result"></div>
-
-                        </div>
-
-                    </div>
+                    <img
+                        src="memory4.jpg"
+                        alt="Memory 4"
+                        class="zoom-image"
+                        style="
+                            transform:
+                            scale(2.8);
+                        "
+                    >
 
                 </div>
 
-            `;
+                <p class="message">
+                    WHAT MADE THIS DAY SPECIAL?
+                </p>
+
+                <div id="memory4Choices">
+
+                    <button
+                        class="button memory4Choice"
+                    >
+                        OUR FIRST TRIP TOGETHER
+                    </button>
+
+                    <button
+                        class="button memory4Choice"
+                    >
+                        HE MET MY WHOLE FAMILY
+                    </button>
+
+                    <button
+                        class="button memory4Choice"
+                    >
+                        OUR FIRST ANNIVERSARY
+                    </button>
+
+                    <button
+                        class="button memory4Choice"
+                    >
+                        MY GRADUATION
+                    </button>
+
+                </div>
+
+                <div id="memory4Result"></div>
+
+            `);
 
             const choices =
-                document.querySelectorAll(".memory4Choice");
+                document.querySelectorAll(
+                    ".memory4Choice"
+                );
 
             const result =
-                document.getElementById("memory4Result");
+                document.getElementById(
+                    "memory4Result"
+                );
 
             choices.forEach(choice => {
 
-                choice.addEventListener("click", function () {
+                choice.addEventListener(
+                    "click",
+                    function () {
 
-                    if (this.innerText === "HE MET MY WHOLE FAMILY") {
+                        if (
+                            this.innerText
+                            === "HE MET MY WHOLE FAMILY"
+                        ) {
 
-                        choices.forEach(btn => {
-                            btn.disabled = true;
-                            btn.style.opacity = "0.5";
-                        });
+                            choices.forEach(btn => {
 
-                        this.style.opacity = "1";
+                                btn.disabled = true;
+                                btn.style.opacity = "0.5";
 
-                        result.innerHTML = `
+                            });
 
-                            <p style="
-                                color: #ff8fb8;
-                                font-size: 18px;
-                            ">
-                                ✓ MEMORY RECOVERED
-                            </p>
+                            this.style.opacity = "1";
 
-                            <img
-                                src="memory4.jpg"
-                                alt="Memory 4 recovered"
-                                style="
-                                    width: 100%;
-                                    max-width: 500px;
-                                    border-radius: 15px;
-                                    margin: 20px auto;
-                                    display: block;
-                                "
-                            >
+                            result.innerHTML = `
 
-                            <p class="message">
+                                <p class="success">
+                                    ✓ MEMORY RECOVERED
+                                </p>
 
-                                April 27. ♡
-                                <br><br>
+                                <img
+                                    src="memory4.jpg"
+                                    alt="Memory 4 recovered"
+                                    class="memory-image"
+                                >
 
-                                You met my whole family that day,
-                                and somehow you survived the family gathering. HAHAHA.
-                                <br><br>
+                                <p class="message">
 
-                                But honestly, what made me happy was seeing
-                                how comfortable you were with them —
-                                and how much they liked you too.
-                                <br><br>
+                                    April 27. ♡
 
-                                I think that's when you started becoming
-                                more than just someone visiting me.
-                                <br><br>
+                                    <br><br>
 
-                                You were slowly becoming someone
-                                they were happy to have around.
-                                ♡
+                                    You met my whole family
+                                    that day,
+                                    and somehow you survived
+                                    the family gathering.
+                                    HAHAHA.
 
-                            </p>
+                                    <br><br>
 
-                            <button class="button" id="nextMemory4">
-                                NEXT MEMORY →
-                            </button>
+                                    But honestly,
+                                    what made me happy
+                                    was seeing how comfortable
+                                    you were with them —
+                                    and how much they liked you too.
 
-                        `;
+                                    <br><br>
 
-                        document
-                            .getElementById("nextMemory4")
-                            .addEventListener("click", showMemory5);
+                                    I think that's when
+                                    you started becoming
+                                    more than just someone
+                                    visiting me.
 
-                    } else {
+                                    <br><br>
 
-                        result.innerHTML = `
+                                    You were slowly becoming
+                                    someone they were happy
+                                    to have around.
 
-                            <p style="
-                                color: #ff8fb8;
-                                font-size: 18px;
-                            ">
-                                ✗ NOT QUITE...
-                            </p>
+                                    <br><br>
 
-                            <p class="message">
-                                Think about everyone you met that day...
-                                <br>
-                                Almost there. ♡
-                            </p>
+                                    ♡
 
-                        `;
+                                </p>
+
+                                <button
+                                    class="button"
+                                    id="nextMemory4"
+                                >
+                                    NEXT MEMORY →
+                                </button>
+
+                            `;
+
+                            document
+                                .getElementById(
+                                    "nextMemory4"
+                                )
+                                .addEventListener(
+                                    "click",
+                                    showMemory5
+                                );
+
+                        } else {
+
+                            result.innerHTML = `
+
+                                <p class="success">
+                                    ✗ NOT QUITE...
+                                </p>
+
+                                <p class="message">
+
+                                    Think about everyone
+                                    you met that day...
+
+                                    <br>
+
+                                    Almost there. ♡
+
+                                </p>
+
+                            `;
+                        }
 
                     }
-
-                });
+                );
 
             });
-
         }
 
 
@@ -1154,205 +1466,224 @@
 
         function showMemory5() {
 
-            document.body.innerHTML = `
+            render(`
 
-                <div class="screen">
+                <div class="system">
+                    MEMORY 05 / 05
+                </div>
 
-                    <div class="terminal">
+                <h1>
+                    FINAL MEMORY ♡
+                </h1>
 
-                        <div class="terminal-top">
-                            <div class="dot"></div>
-                            <div class="dot"></div>
-                            <div class="dot"></div>
+                <p class="message">
 
-                            <div class="terminal-title">
-                                birthday_surprise.exe
-                            </div>
-                        </div>
+                    FINAL MEMORY FILE...
 
-                        <div class="content">
+                    <br>
 
-                            <div class="system">
-                                MEMORY 05 / 05
-                            </div>
+                    ACCESS LEVEL: EXTREME
 
-                            <h1>
-                                FINAL MEMORY ♡
-                            </h1>
+                </p>
 
-                            <p class="message">
-                                FINAL MEMORY FILE...
-                                <br>
-                                ACCESS LEVEL: EXTREME
-                            </p>
+                <div class="zoom-image-container">
 
-                            <div style="
-                                width: 100%;
-                                max-width: 360px;
-                                height: 360px;
-                                margin: 25px auto;
-                                overflow: hidden;
-                                border-radius: 15px;
-                            ">
-
-                                <img
-                                    src="memory5.jpg"
-                                    alt="Memory 5"
-                                    style="
-                                        width: 100%;
-                                        height: 100%;
-                                        object-fit: cover;
-                                        transform: scale(3.5);
-                                    "
-                                >
-
-                            </div>
-
-                            <p class="message">
-                                STATUS CHECK:
-                                <br>
-                                WHO DOES THE FAMILY CONSIDER THIS PERSON TO BE?
-                            </p>
-
-                            <div id="memory5Choices">
-
-                                <button class="button memory5Choice">
-                                    VISITOR
-                                </button>
-
-                                <button class="button memory5Choice">
-                                    FRIEND
-                                </button>
-
-                                <button class="button memory5Choice">
-                                    FAMILY
-                                </button>
-
-                                <button class="button memory5Choice">
-                                    UNKNOWN USER
-                                </button>
-
-                            </div>
-
-                            <div id="memory5Result"></div>
-
-                        </div>
-
-                    </div>
+                    <img
+                        src="memory5.jpg"
+                        alt="Memory 5"
+                        class="zoom-image"
+                        style="
+                            transform:
+                            scale(3.5);
+                        "
+                    >
 
                 </div>
 
-            `;
+                <p class="message">
+
+                    STATUS CHECK:
+
+                    <br>
+
+                    WHO DOES THE FAMILY
+                    CONSIDER THIS PERSON TO BE?
+
+                </p>
+
+                <div id="memory5Choices">
+
+                    <button
+                        class="button memory5Choice"
+                    >
+                        VISITOR
+                    </button>
+
+                    <button
+                        class="button memory5Choice"
+                    >
+                        FRIEND
+                    </button>
+
+                    <button
+                        class="button memory5Choice"
+                    >
+                        FAMILY
+                    </button>
+
+                    <button
+                        class="button memory5Choice"
+                    >
+                        UNKNOWN USER
+                    </button>
+
+                </div>
+
+                <div id="memory5Result"></div>
+
+            `);
 
             const choices =
-                document.querySelectorAll(".memory5Choice");
+                document.querySelectorAll(
+                    ".memory5Choice"
+                );
 
             const result =
-                document.getElementById("memory5Result");
+                document.getElementById(
+                    "memory5Result"
+                );
 
             choices.forEach(choice => {
 
-                choice.addEventListener("click", function () {
+                choice.addEventListener(
+                    "click",
+                    function () {
 
-                    if (this.innerText === "FAMILY") {
+                        if (
+                            this.innerText
+                            === "FAMILY"
+                        ) {
 
-                        choices.forEach(btn => {
-                            btn.disabled = true;
-                            btn.style.opacity = "0.5";
-                        });
+                            choices.forEach(btn => {
 
-                        this.style.opacity = "1";
+                                btn.disabled = true;
+                                btn.style.opacity = "0.5";
 
-                        result.innerHTML = `
+                            });
 
-                            <p style="
-                                color: #ff8fb8;
-                                font-size: 18px;
-                            ">
-                                ✓ MEMORY FULLY RECOVERED
-                            </p>
+                            this.style.opacity = "1";
 
-                            <img
-                                src="memory5.jpg"
-                                alt="Memory 5 recovered"
-                                style="
-                                    width: 100%;
-                                    max-width: 500px;
-                                    border-radius: 15px;
-                                    margin: 20px auto;
-                                    display: block;
-                                "
-                            >
+                            result.innerHTML = `
 
-                            <p class="message">
+                                <p class="success">
+                                    ✓ MEMORY FULLY RECOVERED
+                                </p>
 
-                                FAMILY STATUS: ACCEPTED ♡
-                                <br><br>
+                                <img
+                                    src="memory5.jpg"
+                                    alt="Memory 5 recovered"
+                                    class="memory-image"
+                                >
 
-                                Maybe you didn't notice it happening,
-                                but somewhere along the way,
-                                you stopped feeling like a visitor.
-                                <br><br>
+                                <p class="message">
 
-                                Mama already considers you like a son.
-                                <br>
-                                My sisters treat you like a brother.
-                                <br><br>
+                                    FAMILY STATUS: ACCEPTED ♡
 
-                                And somehow, you became part of
-                                my family too.
-                                <br><br>
+                                    <br><br>
 
-                                I'm really happy that they got to know you
-                                and that they chose to welcome you.
-                                <br><br>
+                                    Maybe you didn't notice
+                                    it happening,
+                                    but somewhere along the way,
+                                    you stopped feeling like a visitor.
 
-                                You became someone they were comfortable with,
-                                someone they cared about,
-                                and someone they were happy to have around.
-                                <br><br>
+                                    <br><br>
 
-                                And I think that's one of the sweetest
-                                things that happened along the way.
-                                ♡
+                                    Mama already considers you
+                                    like a son.
 
-                            </p>
+                                    <br>
 
-                            <button class="button" id="completeMemory">
-                                COMPLETE MEMORY DATABASE →
-                            </button>
+                                    My sisters treat you
+                                    like a brother.
 
-                        `;
+                                    <br><br>
 
-                        document
-                            .getElementById("completeMemory")
-                            .addEventListener("click", showFakeEnding);
+                                    And somehow,
+                                    you became part of
+                                    my family too.
 
-                    } else {
+                                    <br><br>
 
-                        result.innerHTML = `
+                                    I'm really happy
+                                    that they got to know you
+                                    and that they chose
+                                    to welcome you.
 
-                            <p style="
-                                color: #ff8fb8;
-                                font-size: 18px;
-                            ">
-                                ✗ NOT QUITE...
-                            </p>
+                                    <br><br>
 
-                            <p class="message">
-                                Look at the people in the photo...
-                                <br>
-                                Think about how they've treated you. ♡
-                            </p>
+                                    You became someone
+                                    they were comfortable with,
+                                    someone they cared about,
+                                    and someone they were happy
+                                    to have around.
 
-                        `;
+                                    <br><br>
+
+                                    And I think that's one
+                                    of the sweetest things
+                                    that happened along the way.
+
+                                    <br><br>
+
+                                    ♡
+
+                                </p>
+
+                                <button
+                                    class="button"
+                                    id="completeMemory"
+                                >
+                                    COMPLETE MEMORY DATABASE →
+                                </button>
+
+                            `;
+
+                            document
+                                .getElementById(
+                                    "completeMemory"
+                                )
+                                .addEventListener(
+                                    "click",
+                                    showFakeEnding
+                                );
+
+                        } else {
+
+                            result.innerHTML = `
+
+                                <p class="success">
+                                    ✗ NOT QUITE...
+                                </p>
+
+                                <p class="message">
+
+                                    Look at the people
+                                    in the photo...
+
+                                    <br>
+
+                                    Think about how
+                                    they've treated you. ♡
+
+                                </p>
+
+                            `;
+                        }
 
                     }
-
-                });
+                );
 
             });
-
         }
 
 
@@ -1362,143 +1693,123 @@
 
         function showFakeEnding() {
 
-            document.body.innerHTML = `
+            render(`
 
-                <div class="screen">
+                <div class="system">
+                    &lt; MEMORY DATABASE COMPLETE /&gt;
+                </div>
 
-                    <div class="terminal">
+                <div class="cake">
+                    ♡
+                </div>
 
-                        <div class="terminal-top">
-                            <div class="dot"></div>
-                            <div class="dot"></div>
-                            <div class="dot"></div>
+                <h1
+                    style="
+                        font-size:
+                        clamp(30px, 7vw, 55px);
+                    "
+                >
+                    THANK YOU FOR PLAYING
+                </h1>
 
-                            <div class="terminal-title">
-                                birthday_surprise.exe
-                            </div>
-                        </div>
+                <p class="message">
 
-                        <div class="content">
+                    You made it through
+                    all five memories.
 
-                            <div class="system">
-                                &lt; MEMORY DATABASE COMPLETE /&gt;
-                            </div>
+                    <br><br>
 
-                            <div class="cake">
-                                ♡
-                            </div>
+                    Thank you for being part
+                    of so many of them. ♡
 
-                            <h1 style="
-                                font-size: clamp(30px, 7vw, 55px);
-                            ">
-                                THANK YOU FOR PLAYING
-                            </h1>
+                    <br><br>
 
-                            <p class="message">
+                    Happy birthday, Aki.
 
-                                You made it through all five memories.
-                                <br><br>
+                </p>
 
-                                Thank you for being part of
-                                so many of them. ♡
-                                <br><br>
+                <button
+                    class="button"
+                    id="finishButton"
+                >
+                    FINISH →
+                </button>
 
-                                Happy birthday, Aki.
+                <div class="status">
 
-                            </p>
-
-                            <button class="button" id="finishButton">
-                                FINISH →
-                            </button>
-
-                            <div class="status">
-                                system.status:
-                                <span>complete</span>
-                            </div>
-
-                        </div>
-
-                    </div>
+                    system.status:
+                    <span>complete</span>
 
                 </div>
 
-            `;
+            `);
 
             document
                 .getElementById("finishButton")
-                .addEventListener("click", showShutdown);
-
+                .addEventListener(
+                    "click",
+                    showShutdown
+                );
         }
 
 
         /* =====================================================
-           FAKE SHUTDOWN
+           SHUTDOWN
         ===================================================== */
 
         function showShutdown() {
 
-            document.body.innerHTML = `
+            render(`
 
-                <div class="screen">
-
-                    <div class="terminal">
-
-                        <div class="terminal-top">
-                            <div class="dot"></div>
-                            <div class="dot"></div>
-                            <div class="dot"></div>
-
-                            <div class="terminal-title">
-                                system_shutdown.exe
-                            </div>
-                        </div>
-
-                        <div class="content">
-
-                            <div class="system">
-                                SYSTEM SHUTDOWN
-                            </div>
-
-                            <p class="message">
-
-                                Saving memories...
-                                <br>
-                                Closing birthday_surprise.exe...
-                                <br>
-                                Disconnecting player...
-
-                            </p>
-
-                            <p style="
-                                color: #ff9dcc;
-                                font-size: 18px;
-                                margin-top: 30px;
-                            ">
-                                99%
-                            </p>
-
-                            <br>
-
-                            <p class="message">
-                                ...
-                            </p>
-
-                            <button class="button" id="lastFile">
-                                WAIT... WHAT IS THIS?
-                            </button>
-
-                        </div>
-
-                    </div>
-
+                <div class="system">
+                    SYSTEM SHUTDOWN
                 </div>
 
-            `;
+                <p class="message">
+
+                    Saving memories...
+
+                    <br>
+
+                    Closing birthday_surprise.exe...
+
+                    <br>
+
+                    Disconnecting player...
+
+                </p>
+
+                <p
+                    style="
+                        color:#ff9dcc;
+                        font-size:18px;
+                        margin-top:30px;
+                    "
+                >
+                    99%
+                </p>
+
+                <br>
+
+                <p class="message">
+                    ...
+                </p>
+
+                <button
+                    class="button"
+                    id="lastFile"
+                >
+                    WAIT... WHAT IS THIS?
+                </button>
+
+            `);
 
             document
                 .getElementById("lastFile")
-                .addEventListener("click", showFinalReveal);
-
+                .addEventListener(
+                    "click",
+                    showFinalReveal
+                );
         }
 
 
@@ -1508,119 +1819,103 @@
 
         function showFinalReveal() {
 
-            document.body.innerHTML = `
+            render(`
 
-                <div class="screen">
-
-                    <div class="terminal">
-
-                        <div class="terminal-top">
-                            <div class="dot"></div>
-                            <div class="dot"></div>
-                            <div class="dot"></div>
-
-                            <div class="terminal-title">
-                                one_more_thing.exe
-                            </div>
-                        </div>
-
-                        <div class="content">
-
-                            <div class="system">
-                                ONE MORE THING...
-                            </div>
-
-                            <div class="cake">
-                                ♡
-                            </div>
-
-                            <p class="message">
-
-                                We met at VALO in November,
-                                and we became friends after that.
-
-                                <br><br>
-
-                                Then came <strong>December 21.</strong>
-
-                                <br><br>
-
-                                And now it's <strong>October 8.</strong>
-
-                                <br><br>
-
-                                It's your <strong>22nd birthday</strong>,
-                                and we've almost known each other
-                                for 10 months.
-
-                                <br><br>
-
-                                Thank you for everything.
-
-                                <br><br>
-
-                                Thank you for staying with me,
-                                for nagtyatyaga sa attitude ko,
-                                and for accepting God
-                                and making Him the center of us.
-
-                                <br><br>
-
-                                You've been there through my busy days,
-                                my stressful days,
-                                my law school days,
-                                and all the random things
-                                that come with me.
-
-                                <br><br>
-
-                                And somehow,
-                                you still stayed.
-
-                                <br><br>
-
-                                So today...
-
-                                <br><br>
-
-                                it's not just your birthday.
-
-                                <br><br>
-
-                                <strong>
-                                    This is my last gift to you.
-                                </strong>
-
-                                <br><br>
-
-                                I want to make this day special.
-
-                                <br><br>
-
-                                Are you curious??
-
-                                <br><br>
-
-                                Ayieeeee. ♡
-
-                            </p>
-
-                            <button class="button" id="yesButton">
-                                YES → ♡
-                            </button>
-
-                        </div>
-
-                    </div>
-
+                <div class="system">
+                    ONE MORE THING...
                 </div>
 
-            `;
+                <div class="cake">
+                    ♡
+                </div>
+
+                <p class="long-letter">
+
+                    We first met while playing VALO in November,
+                    We became friends after that, and somehow, little by little,
+                    you became someone really important to me.
+
+                    <br><br>
+
+                    Then came <strong>December 21.</strong>
+
+                    <br><br>
+
+                    And now it's <strong>October 8.</strong>
+
+                    <br><br>
+
+                    It's your <strong>22nd birthday</strong>,
+                    and we've almost known each other
+                    for 10 months.
+
+                    <br><br>
+
+                    Thank you for everything.
+
+                    <br><br>
+
+                    Thank you for staying with me,
+                    for nagtyatyaga sa attitude ko,
+                    and for accepting God
+                    and making Him the center of us.
+
+                    <br><br>
+
+                    You've been there through my busy days,
+                    my stressful days,
+                    my law school days,
+                    and all the random things
+                    that come with me.
+
+                    <br><br>
+
+                    And somehow,
+                    you still stayed.
+
+                    <br><br>
+
+                    So today...
+
+                    <br><br>
+
+                    it's not just your birthday.
+
+                    <br><br>
+
+                    <strong>
+                        This is my last gift to you.
+                    </strong>
+
+                    <br><br>
+
+                    I want to make this day special.
+
+                    <br><br>
+
+                    Are you curious??
+
+                    <br><br>
+
+                    Ayieeeee. ♡
+
+                </p>
+
+                <button
+                    class="button"
+                    id="yesButton"
+                >
+                    YES → ♡
+                </button>
+
+            `);
 
             document
                 .getElementById("yesButton")
-                .addEventListener("click", showAnswer);
-
+                .addEventListener(
+                    "click",
+                    showAnswer
+                );
         }
 
 
@@ -1630,326 +1925,340 @@
 
         function showAnswer() {
 
-            document.body.innerHTML = `
+            render(`
 
-                <div class="screen">
+                <div class="system">
+                    ANSWER RECEIVED
+                </div>
 
-                    <div class="terminal">
+                <div class="cake">
+                    ♡
+                </div>
 
-                        <div class="terminal-top">
-                            <div class="dot"></div>
-                            <div class="dot"></div>
-                            <div class="dot"></div>
+                <h1
+                    class="name"
+                    style="
+                        margin-bottom:40px;
+                    "
+                >
+                    YES. ♡
+                </h1>
 
-                            <div class="terminal-title">
-                                relationship_status.exe
-                            </div>
-                        </div>
+                <div class="long-letter">
 
-                        <div class="content">
+                    You know,
+                    it's my first time doing this,
+                    and I'm really afraid and excited.
 
-                            <div class="system">
-                                ANSWER RECEIVED
-                            </div>
+                    SUPER EXCITED AKO,
+                    but at the same time,
+                    I am afraid.
 
-                            <div class="cake">
-                                ♡
-                            </div>
+                    <br><br>
 
-                            <h1 class="name">
-                                YES. ♡
-                            </h1>
+                    I have so many what ifs.
 
-                            <p class="message">
+                    <br><br>
 
-                                You know, it's my first time doing this,
-                                and I'm really afraid and excited.
-                                SUPER EXCITED AKO,
-                                but at the same time, I am afraid.
+                    I'm afraid of commitment.
 
-                                <br><br>
+                    Natatakot ako na at the end,
+                    iiwan mo rin ako or magbabago.
 
-                                I have so many what ifs.
+                    <br><br>
 
-                                <br><br>
+                    I want us to stay the same lang,
+                    na kahit walang label,
+                    kaya naman natin siguro.
 
-                                I'm afraid of commitment.
-                                Natatakot ako na at the end,
-                                iiwan mo rin ako or magbabago.
+                    Pero parang di tayo magmamature dun.
 
-                                <br><br>
+                    <br><br>
 
-                                I want us to stay the same lang,
-                                na kahit walang label,
-                                kaya naman natin siguro.
-                                Pero parang di tayo magmamature dun.
+                    Natatakot ako na at the end,
+                    mag-cheat ka lang,
+                    saktan mo ako,
+                    or ma-attach ako masyado.
 
-                                <br><br>
+                    Natatakot ako kasi hindi ko pa
+                    'to na-try before.
 
-                                Natatakot ako na at the end,
-                                mag-cheat ka lang,
-                                saktan mo ako,
-                                or ma-attach ako masyado.
-                                Natatakot ako kasi hindi ko pa 'to na-try before.
+                    <br><br>
 
-                                <br><br>
+                    But you proved that
+                    you're worth the risk.
 
-                                But you proved that you're worth the risk.
+                    <br><br>
 
-                                <br><br>
+                    The moment na nakilala kita,
+                    I honestly thought na magiging
+                    gaming friends lang tayo.
 
-                                The moment na nakilala kita,
-                                I honestly thought na magiging gaming friends lang tayo.
-                                But after mo nag-confess and asked to court me,
-                                that's when I realized na seryoso ka.
+                    But after mo nag-confess
+                    and asked to court me,
+                    that's when I realized
+                    na seryoso ka.
 
-                                <br><br>
+                    <br><br>
 
-                                And all your gestures towards me,
-                                nakikita ko lahat 'yan.
-                                And I appreciate them so much,
-                                especially the way you treat my family.
+                    And all your gestures towards me,
+                    nakikita ko lahat 'yan.
 
-                                <br><br>
+                    And I appreciate them so much,
+                    especially the way you treat my family.
 
-                                And kung paano din nag-grow
-                                yung relationship mo kay Lord.
+                    <br><br>
 
-                                <br><br>
+                    And kung paano din nag-grow
+                    yung relationship mo kay Lord.
 
-                                Lahat ng what ifs,
-                                hindi ko malalaman yung sagot
-                                unless I've tried.
+                    <br><br>
 
-                                <br><br>
+                    Lahat ng what ifs,
+                    hindi ko malalaman yung sagot
+                    unless I've tried.
 
-                                It's my first time to be someone's girlfriend,
-                                so bear with me.
-                                I don't know yet how to do this perfectly.
+                    <br><br>
 
-                                <br><br>
+                    It's my first time
+                    to be someone's girlfriend,
+                    so bear with me.
 
-                                Let's figure it out together.
+                    I don't know yet
+                    how to do this perfectly.
 
-                                <br><br>
+                    <br><br>
 
-                                Let's continue to make God
-                                the center of us,
-                                and let's continue to love and respect
-                                each other's families.
+                    Let's figure it out together.
 
-                                <br><br>
+                    <br><br>
 
-                                You know, dati akala ko
-                                wala na akong magiging boyfriend.
+                    Let's continue to make God
+                    the center of us,
+                    and let's continue to love
+                    and respect each other's families.
 
-                                <br><br>
+                    <br><br>
 
-                                And upon reading my journal
-                                before you came into my life,
-                                ang dami kong mini-heartbreaks
-                                where I kept questioning my worth.
+                    You know,
+                    dati akala ko wala na akong
+                    magiging boyfriend.
 
-                                <br><br>
+                    <br><br>
 
-                                Sabi ko,
-                                "Deserve ko ba 'to?"
+                    And upon reading my journal
+                    before you came into my life,
+                    ang dami kong mini-heartbreaks
+                    where I kept questioning my worth.
 
-                                <br><br>
+                    <br><br>
 
-                                To the point na I was asking God
-                                to find someone who would give me assurance,
-                                who would see my worth,
-                                and who would love me.
+                    Sabi ko,
 
-                                <br><br>
+                    <br>
 
-                                And I told myself
-                                that I would try my best
-                                to give my everything to that person.
+                    "Deserve ko ba 'to?"
 
-                                <br><br>
+                    <br><br>
 
-                                And guess what?
+                    To the point na I was asking God
+                    to find someone who would give me assurance,
+                    who would see my worth,
+                    and who would love me.
 
-                                <br><br>
+                    <br><br>
 
-                                That's what I like about writing in my diary.
+                    And I told myself
+                    that I would try my best
+                    to give my everything to that person.
 
-                                <br><br>
+                    <br><br>
 
-                                Nare-realize ko kung gaano ako ka-blessed.
+                    And guess what?
 
-                                <br><br>
+                    <br><br>
 
-                                Na dati,
-                                prayer ko lang 'to.
+                    That's what I like about
+                    writing in my diary.
 
-                                <br>
+                    <br><br>
 
-                                Ngayon,
-                                nasa harap ko na.
+                    Nare-realize ko
+                    kung gaano ako ka-blessed.
 
-                                <br><br>
+                    <br><br>
 
-                                If I didn't write those things down,
-                                I probably wouldn't have realized
-                                how God answered them.
+                    Na dati,
+                    prayer ko lang 'to.
 
-                                <br><br>
+                    <br>
 
-                                When I read those old entries,
-                                naiiyak ako kasi naaalala ko
-                                kung paano ako umiiyak dati
-                                kasi I felt like I was unworthy of love.
+                    Ngayon,
+                    nasa harap ko na.
 
-                                <br><br>
+                    <br><br>
 
-                                And now,
-                                nasa harap ko na.
+                    If I didn't write those things down,
+                    I probably wouldn't have realized
+                    how God answered them.
 
-                                <br><br>
+                    <br><br>
 
-                                And sometimes,
-                                I'm still pushing you away.
+                    When I read those old entries,
+                    naiiyak ako kasi naaalala ko
+                    kung paano ako umiiyak dati
+                    kasi I felt like I was unworthy of love.
 
-                                <br><br>
+                    <br><br>
 
-                                But I want you to know
-                                that every time I push you away,
-                                it's not really what I mean.
+                    And now,
+                    nasa harap ko na.
 
-                                <br><br>
+                    <br><br>
 
-                                I'm just afraid.
+                    And sometimes,
+                    I'm still pushing you away.
 
-                                <br><br>
+                    <br><br>
 
-                                And I'm super blessed
-                                and thankful kay Lord
-                                kasi binigay ka Niya.
+                    But I want you to know
+                    that every time I push you away,
+                    it's not really what I mean.
 
-                                <br><br>
+                    <br><br>
 
-                                You don't know how much
-                                I'm thanking God
-                                na lahat ng hiningi ko dati sa journal,
-                                lahat ng iniiyakan ko,
-                                nakukuha ko na ngayon.
+                    I'm just afraid.
 
-                                <br><br>
+                    <br><br>
 
-                                From work,
-                                sa studies,
-                                and especially sa love.
+                    And I'm super blessed
+                    and thankful kay Lord
+                    kasi binigay ka Niya.
 
-                                <br><br>
+                    <br><br>
 
-                                Kaya thank you so much
-                                for the patience na binibigay mo,
-                                and for all the efforts you make for me.
+                    You don't know how much
+                    I'm thanking God
+                    na lahat ng hiningi ko dati
+                    sa journal,
+                    lahat ng iniiyakan ko,
+                    nakukuha ko na ngayon.
 
-                                <br><br>
+                    <br><br>
 
-                                And ngayon ko lang 'to sasabihin
-                                wholeheartedly...
+                    From work,
+                    sa studies,
+                    and especially sa love.
 
-                                <br><br>
+                    <br><br>
 
-                                <strong style="
-                                    color:#ff77ad;
-                                    font-size:22px;
-                                ">
-                                    I LOVEEE YOU. ♡
-                                </strong>
+                    Kaya thank you so much
+                    for the patience na binibigay mo,
+                    and for all the efforts
+                    you make for me.
 
-                                <br><br>
+                    <br><br>
 
-                                Happy birthday.
+                    And ngayon ko lang 'to sasabihin
+                    wholeheartedly...
 
-                                <br><br>
+                    <br><br>
 
-                                I am very thankful kay Lord
-                                na nabuhay ka
-                                and binigay ka Niya sa akin.
+                    <span class="final-love">
+                        I LOVEEE YOU. ♡
+                    </span>
 
-                                <br><br>
+                    <br><br>
 
-                                I am very proud of you
-                                in every way,
-                                and sa lahat ng bagay
-                                na ma-achieve mo
-                                at ma-achieve mo pa.
+                    Happy birthday.
 
-                                <br><br>
+                    <br><br>
 
-                                Sa lahat ng plans mo
-                                and sa sarili mo,
-                                magtiwala ka sa sarili mo
-                                na kaya mo.
+                    I am very thankful kay Lord
+                    na nabuhay ka
+                    and binigay ka Niya sa akin.
 
-                                <br><br>
+                    <br><br>
 
-                                And surrender to God's plan,
-                                like always.
+                    I am very proud of you
+                    in every way,
+                    and sa lahat ng bagay
+                    na ma-achieve mo
+                    at ma-achieve mo pa.
 
-                                <br><br>
+                    <br><br>
 
-                                You never know how God works.
+                    Sa lahat ng plans mo
+                    and sa sarili mo,
+                    magtiwala ka sa sarili mo
+                    na kaya mo.
 
-                                <br><br>
+                    <br><br>
 
-                                Sooner or later,
-                                God will give you
-                                all the blessings you deserve,
-                                because you are such a good,
-                                kind-hearted,
-                                and loving person.
+                    And surrender to God's plan,
+                    like always.
 
-                                <br><br>
+                    <br><br>
 
-                                You deserve all the love.
+                    You never know how God works.
 
-                                <br><br>
+                    <br><br>
 
-                                And I'm so happy
-                                that I get to be part of your life.
+                    Sooner or later,
+                    God will give you
+                    all the blessings you deserve,
+                    because you are such a good,
+                    kind-hearted,
+                    and loving person.
 
-                                <br><br>
+                    <br><br>
 
-                                <strong>
-                                    Happy 22nd birthday, Aki. ♡
-                                </strong>
+                    You deserve all the love.
 
-                            </p>
+                    <br><br>
 
-                            <div class="status">
+                    And I'm so happy
+                    that I get to be part
+                    of your life.
 
-                                courting.exe
-                                <br>
-                                ↓
-                                <br>
-                                relationship_status.exe
-                                <br><br>
+                    <br><br>
 
-                                STATUS:
-                                <span>ACCEPTED ♡</span>
-
-                                <br><br>
-
-                                process completed successfully.
-
-                            </div>
-
-                        </div>
-
-                    </div>
+                    <strong>
+                        Happy 22nd birthday, Aki. ♡
+                    </strong>
 
                 </div>
 
-            `;
+                <div class="status">
 
+                    courting.exe
+                    <br>
+
+                    ↓
+                    <br>
+
+                    relationship_status.exe
+
+                    <br><br>
+
+                    STATUS:
+                    <span>ACCEPTED ♡</span>
+
+                    <br><br>
+
+                    process completed successfully.
+
+                </div>
+
+            `);
         }
+
+
+        /* =====================================================
+           INITIALIZE
+        ===================================================== */
+
+        showHome();
 
     </script>
 
