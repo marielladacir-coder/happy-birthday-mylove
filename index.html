@@ -1487,8 +1487,7 @@
             document
                 .getElementById("lastFile")
                 .addEventListener("click", showFinalReveal);
-
-        }
+                    }
 
 
         /* =========================
@@ -1497,167 +1496,406 @@
 
         function showFinalReveal() {
 
-            document.body.innerHTML = `
+            document.getElementById("app").innerHTML = terminal(`
 
-                <div class="screen">
+                <div class="system">
+                    one_more_thing.exe
+                </div>
 
-                    <div class="terminal">
+                <div class="final-heart">
+                    ♡
+                </div>
 
-                        <div class="terminal-top">
-                            <div class="dot"></div>
-                            <div class="dot"></div>
-                            <div class="dot"></div>
+                <p class="message">
 
-                            <div class="terminal-title">
-                                one_more_thing.exe
-                            </div>
-                        </div>
+                    We met at VALO in November,
+                    and we became friends after that.
 
-                        <div class="content">
+                    <br><br>
 
-                            <div class="system">
-                                &lt; ONE UNFINISHED FILE FOUND /&gt;
-                            </div>
+                    Then came <strong>December 21.</strong>
 
-                            <h1 style="
-                                font-size: clamp(30px, 7vw, 55px);
-                            ">
-                                ONE MORE THING...
-                            </h1>
+                    <br><br>
 
-                            <p class="message">
+                    And now it's <strong>October 8.</strong>
 
-                                We met on November 18.
-                                <br><br>
+                    <br><br>
 
-                                You started courting me on December 21.
-                                <br><br>
+                    It's your <strong>22nd birthday</strong>,
+                    and we've almost known each other
+                    for 10 months.
 
-                                And now it's October 8.
-                                <br>
-                                Almost ten months of getting to know each other.
-                                <br><br>
+                    <br><br>
 
-                                Thank you for your patience,
-                                your effort, and for staying.
-                                <br><br>
+                    Thank you for everything.
 
-                                You've been there through my busy days,
-                                my law school days,
-                                my achievements,
-                                and even the little moments
-                                that became memories.
-                                <br><br>
+                    <br><br>
 
-                                So...
+                    Thank you for staying with me,
+                    for nagtyatyaga sa attitude ko,
+                    and for accepting God
+                    and making Him the center of us.
 
-                            </p>
+                    <br><br>
 
-                            <p style="
-                                color: #ff9dcc;
-                                font-family: Georgia, serif;
-                                font-size: 28px;
-                                line-height: 1.6;
-                                margin: 30px auto;
-                            ">
+                    You've been there through my busy days,
+                    my stressful days,
+                    my law school days,
+                    and all the random things
+                    that come with me.
 
-                                My answer is...
+                    <br><br>
 
-                            </p>
+                    And somehow,
+                    you still stayed.
 
-                            <button class="button" id="answerButton">
-                                REVEAL ANSWER ♡
-                            </button>
+                    <br><br>
 
-                            <div id="finalAnswer"></div>
+                    So today...
 
-                        </div>
+                    <br><br>
 
-                    </div>
+                    it's not just your birthday.
+
+                    <br><br>
+
+                    <strong>
+                        This is my last gift to you.
+                    </strong>
+
+                    <br><br>
+
+                    I want to make this day special.
+
+                    <br><br>
+
+                    Are you curious??
+
+                    <br><br>
+
+                    Ayieeeee. ♡
+
+                </p>
+
+                <button class="button" onclick="showAnswer()">
+                    YES → ♡
+                </button>
+
+            `);
+
+        }
+
+
+        /* =========================
+           THE ANSWER
+        ========================= */
+
+        function showAnswer() {
+
+            document.getElementById("app").innerHTML = terminal(`
+
+                <div class="system">
+                    ANSWER RECEIVED
+                </div>
+
+                <div class="final-heart">
+                    ♡
+                </div>
+
+                <h1 class="name">
+                    YES. ♡
+                </h1>
+
+                <p class="message" style="
+                    text-align: left;
+                    max-width: 720px;
+                    font-size: 14px;
+                ">
+
+                    You know, it's my first time doing this,
+                    and I'm really afraid and excited.
+                    SUPER EXCITED AKO,
+                    but at the same time, I am afraid.
+
+                    <br><br>
+
+                    I have so many what ifs.
+
+                    <br><br>
+
+                    I'm afraid of commitment.
+                    Natatakot ako na at the end,
+                    iiwan mo rin ako or magbabago.
+
+                    <br><br>
+
+                    I want us to stay the same lang,
+                    na kahit walang label,
+                    kaya naman natin siguro.
+                    Pero parang di tayo magmamature dun.
+
+                    <br><br>
+
+                    Natatakot ako na at the end,
+                    mag-cheat ka lang,
+                    saktan mo ako,
+                    or ma-attach ako masyado.
+                    Natatakot ako kasi hindi ko pa 'to na-try before.
+
+                    <br><br>
+
+                    But you proved that you're worth the risk.
+
+                    <br><br>
+
+                    The moment na nakilala kita,
+                    I honestly thought na magiging gaming friends lang tayo.
+                    But after mo nag-confess and asked to court me,
+                    that's when I realized na seryoso ka.
+
+                    <br><br>
+
+                    And all your gestures towards me,
+                    nakikita ko lahat 'yan.
+                    And I appreciate them so much,
+                    especially the way you treat my family.
+
+                    <br><br>
+
+                    And kung paano din nag-grow
+                    yung relationship mo kay Lord.
+
+                    <br><br>
+
+                    Lahat ng what ifs,
+                    hindi ko malalaman yung sagot
+                    unless I've tried.
+
+                    <br><br>
+
+                    It's my first time to be someone's girlfriend,
+                    so bear with me.
+                    I don't know yet how to do this perfectly.
+
+                    <br><br>
+
+                    Let's figure it out together.
+
+                    <br><br>
+
+                    Let's continue to make God
+                    the center of us,
+                    and let's continue to love and respect
+                    each other's families.
+
+                    <br><br>
+
+                    You know, dati akala ko
+                    wala na akong magiging boyfriend.
+
+                    <br><br>
+
+                    And upon reading my journal
+                    before you came into my life,
+                    ang dami kong mini-heartbreaks
+                    where I kept questioning my worth.
+
+                    <br><br>
+
+                    Sabi ko,
+                    "Deserve ko ba 'to?"
+
+                    <br><br>
+
+                    To the point na I was asking God
+                    to find someone who would give me assurance,
+                    who would see my worth,
+                    and who would love me.
+
+                    <br><br>
+
+                    And I told myself
+                    that I would try my best
+                    to give my everything to that person.
+
+                    <br><br>
+
+                    And guess what?
+
+                    <br><br>
+
+                    That's what I like about writing in my diary.
+
+                    <br><br>
+
+                    Nare-realize ko kung gaano ako ka-blessed.
+
+                    <br><br>
+
+                    Na dati,
+                    prayer ko lang 'to.
+
+                    <br>
+
+                    Ngayon,
+                    nasa harap ko na.
+
+                    <br><br>
+
+                    If I didn't write those things down,
+                    I probably wouldn't have realized
+                    how God answered them.
+
+                    <br><br>
+
+                    When I read those old entries,
+                    naiiyak ako kasi naaalala ko
+                    kung paano ako umiiyak dati
+                    kasi I felt like I was unworthy of love.
+
+                    <br><br>
+
+                    And now,
+                    nasa harap ko na.
+
+                    <br><br>
+
+                    And sometimes,
+                    I'm still pushing you away.
+
+                    <br><br>
+
+                    But I want you to know
+                    that every time I push you away,
+                    it's not really what I mean.
+
+                    <br><br>
+
+                    I'm just afraid.
+
+                    <br><br>
+
+                    And I'm super blessed
+                    and thankful kay Lord
+                    kasi binigay ka Niya.
+
+                    <br><br>
+
+                    You don't know how much
+                    I'm thanking God
+                    na lahat ng hiningi ko dati sa journal,
+                    lahat ng iniiyakan ko,
+                    nakukuha ko na ngayon.
+
+                    <br><br>
+
+                    From work,
+                    sa studies,
+                    and especially sa love.
+
+                    <br><br>
+
+                    Kaya thank you so much
+                    for the patience na binibigay mo,
+                    and for all the efforts you make for me.
+
+                    <br><br>
+
+                    And ngayon ko lang 'to sasabihin
+                    wholeheartedly...
+
+                    <br><br>
+
+                    <strong style="
+                        color:#ff77ad;
+                        font-size:22px;
+                    ">
+                        I LOVEEE YOU. ♡
+                    </strong>
+
+                    <br><br>
+
+                    Happy birthday.
+
+                    <br><br>
+
+                    I am very thankful kay Lord
+                    na nabuhay ka
+                    and binigay ka Niya sa akin.
+
+                    <br><br>
+
+                    I am very proud of you
+                    in every way,
+                    and sa lahat ng bagay
+                    na ma-achieve mo
+                    at ma-achieve mo pa.
+
+                    <br><br>
+
+                    Sa lahat ng plans mo
+                    and sa sarili mo,
+                    magtiwala ka sa sarili mo
+                    na kaya mo.
+
+                    <br><br>
+
+                    And surrender to God's plan,
+                    like always.
+
+                    <br><br>
+
+                    You never know how God works.
+
+                    <br><br>
+
+                    Sooner or later,
+                    God will give you
+                    all the blessings you deserve,
+                    because you are such a good,
+                    kind-hearted,
+                    and loving person.
+
+                    <br><br>
+
+                    You deserve all the love.
+
+                    <br><br>
+
+                    And I'm so happy
+                    that I get to be part of your life.
+
+                    <br><br>
+
+                    Happy 22nd birthday, Aki. ♡
+
+                </p>
+
+                <div class="code" style="margin-top:35px;">
+
+                    courting.exe
+                    <br>
+                    ↓
+                    <br>
+                    relationship_status.exe
+                    <br><br>
+
+                    STATUS:
+                    <span style="color:#ff77ad;">
+                        ACCEPTED ♡
+                    </span>
 
                 </div>
 
-            `;
+                <div class="status">
+                    process completed successfully.
+                </div>
 
-            document
-                .getElementById("answerButton")
-                .addEventListener("click", function () {
-
-                    document.getElementById("finalAnswer").innerHTML = `
-
-                        <div style="
-                            margin-top: 35px;
-                            padding: 25px;
-                            border: 1px solid #ff9dcc;
-                            border-radius: 18px;
-                            box-shadow: 0 0 30px rgba(255, 143, 194, 0.25);
-                        ">
-
-                            <p style="
-                                color: #ff9dcc;
-                                font-size: 13px;
-                                letter-spacing: 2px;
-                                margin-bottom: 20px;
-                            ">
-                                RELATIONSHIP_STATUS.EXE
-                            </p>
-
-                            <p style="
-                                color: #ffb4d7;
-                                font-size: 18px;
-                                line-height: 1.8;
-                            ">
-                                COURTING STATUS
-                                <br>
-                                ↓
-                                <br>
-                                PROCESSING...
-                            </p>
-
-                            <br>
-
-                            <p style="
-                                color: #ff9dcc;
-                                font-family: Georgia, serif;
-                                font-size: 42px;
-                            ">
-                                YES. ♡
-                            </p>
-
-                            <br>
-
-                            <p class="message">
-
-                                Happy birthday, Aki.
-                                <br><br>
-
-                                I choose you.
-                                <br><br>
-
-                                Let's give us a chance.
-                                ♡
-
-                            </p>
-
-                            <p style="
-                                color: #907986;
-                                font-size: 11px;
-                                margin-top: 25px;
-                            ">
-                                courting.exe → relationship_status.exe
-                                <br>
-                                STATUS: ACCEPTED ♡
-                            </p>
-
-                        </div>
-
-                    `;
-
-                    this.style.display = "none";
-
-                });
+            `);
 
         }
+
+        
 
     </script>
 
