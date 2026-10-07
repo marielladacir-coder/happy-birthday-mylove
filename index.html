@@ -1,0 +1,324 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Happy Birthday, Aki ♡</title>
+
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            min-height: 100vh;
+            background:
+                radial-gradient(circle at 20% 20%, rgba(255, 143, 194, 0.18), transparent 30%),
+                radial-gradient(circle at 80% 80%, rgba(255, 105, 180, 0.15), transparent 30%),
+                #100b14;
+            color: #fff;
+            font-family: "Courier New", monospace;
+            overflow: hidden;
+        }
+
+        /* Pink glow */
+        body::before {
+            content: "";
+            position: fixed;
+            inset: 0;
+            pointer-events: none;
+            background:
+                linear-gradient(
+                    135deg,
+                    transparent 0%,
+                    rgba(255, 105, 180, 0.04) 50%,
+                    transparent 100%
+                );
+        }
+
+        .screen {
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 25px;
+            position: relative;
+        }
+
+        .terminal {
+            width: min(720px, 100%);
+            padding: 22px;
+            border: 1px solid rgba(255, 154, 207, 0.35);
+            border-radius: 18px;
+            background: rgba(24, 15, 27, 0.82);
+            box-shadow:
+                0 0 35px rgba(255, 105, 180, 0.12),
+                inset 0 0 25px rgba(255, 105, 180, 0.03);
+            backdrop-filter: blur(10px);
+        }
+
+        .terminal-top {
+            display: flex;
+            align-items: center;
+            gap: 7px;
+            padding-bottom: 18px;
+            border-bottom: 1px solid rgba(255, 154, 207, 0.15);
+        }
+
+        .dot {
+            width: 11px;
+            height: 11px;
+            border-radius: 50%;
+            background: #ff8fc2;
+            box-shadow: 0 0 10px rgba(255, 143, 194, 0.6);
+        }
+
+        .terminal-title {
+            margin-left: 8px;
+            color: #d9a7c5;
+            font-size: 12px;
+            letter-spacing: 1px;
+        }
+
+        .content {
+            text-align: center;
+            padding: 55px 20px 45px;
+        }
+
+        .system {
+            color: #ff9dcc;
+            font-size: 12px;
+            letter-spacing: 2px;
+            margin-bottom: 28px;
+            opacity: 0.9;
+        }
+
+        .cake {
+            font-size: 58px;
+            margin-bottom: 20px;
+            animation: float 3s ease-in-out infinite;
+            filter: drop-shadow(0 0 12px rgba(255, 143, 194, 0.5));
+        }
+
+        h1 {
+            font-family: Georgia, serif;
+            font-size: clamp(38px, 9vw, 72px);
+            font-weight: 400;
+            letter-spacing: 5px;
+            margin-bottom: 6px;
+            color: #fff3fa;
+            text-shadow: 0 0 25px rgba(255, 143, 194, 0.35);
+        }
+
+        .name {
+            color: #ff9dcc;
+            font-family: Georgia, serif;
+            font-size: clamp(30px, 7vw, 52px);
+            letter-spacing: 8px;
+            margin-bottom: 30px;
+        }
+
+        .message {
+            color: #d9c5d2;
+            font-family: Georgia, serif;
+            font-size: 17px;
+            font-style: italic;
+            margin-bottom: 38px;
+        }
+
+        .button {
+            border: 1px solid #ff9dcc;
+            background: rgba(255, 143, 194, 0.08);
+            color: #ffb4d7;
+            padding: 15px 30px;
+            border-radius: 999px;
+            font-family: "Courier New", monospace;
+            font-size: 14px;
+            letter-spacing: 2px;
+            cursor: pointer;
+            transition: 0.3s ease;
+        }
+
+        .button:hover {
+            background: #ff9dcc;
+            color: #1a0d15;
+            box-shadow: 0 0 25px rgba(255, 143, 194, 0.45);
+            transform: translateY(-2px);
+        }
+
+        .status {
+            margin-top: 35px;
+            font-size: 11px;
+            color: #907986;
+        }
+
+        .status span {
+            color: #ff9dcc;
+        }
+
+        /* Floating hearts */
+        .heart {
+            position: fixed;
+            bottom: -30px;
+            color: #ff9dcc;
+            opacity: 0;
+            pointer-events: none;
+            animation: rise linear forwards;
+        }
+
+        @keyframes rise {
+            0% {
+                transform: translateY(0) rotate(0deg);
+                opacity: 0;
+            }
+
+            15% {
+                opacity: 0.7;
+            }
+
+            100% {
+                transform: translateY(-110vh) rotate(25deg);
+                opacity: 0;
+            }
+        }
+
+        @keyframes float {
+            0%, 100% {
+                transform: translateY(0);
+            }
+
+            50% {
+                transform: translateY(-8px);
+            }
+        }
+
+        @media (max-width: 600px) {
+            .terminal {
+                padding: 15px;
+            }
+
+            .content {
+                padding: 45px 10px 35px;
+            }
+
+            h1 {
+                letter-spacing: 3px;
+            }
+
+            .name {
+                letter-spacing: 5px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <main class="screen">
+
+        <section class="terminal">
+
+            <div class="terminal-top">
+                <div class="dot"></div>
+                <div class="dot"></div>
+                <div class="dot"></div>
+
+                <div class="terminal-title">
+                    birthday_surprise.exe
+                </div>
+            </div>
+
+            <div class="content">
+
+                <div class="system">
+                    &lt; BIRTHDAY SYSTEM ONLINE /&gt;
+                </div>
+
+                <div class="cake">
+                    🎂
+                </div>
+
+                <h1>
+                    HAPPY BIRTHDAY
+                </h1>
+
+                <div class="name">
+                    AKI
+                </div>
+
+                <p class="message">
+                    I made something for you. ♡
+                </p>
+
+                <button class="button" id="startButton">
+                    INITIALIZE ♡
+                </button>
+
+                <div class="status">
+                    system.status:
+                    <span>ready</span>
+                </div>
+
+            </div>
+
+        </section>
+
+    </main>
+
+
+    <script>
+
+        /* Floating hearts */
+
+        function createHeart() {
+
+            const heart = document.createElement("div");
+
+            heart.className = "heart";
+
+            heart.innerHTML = Math.random() > 0.5 ? "♡" : "♥";
+
+            heart.style.left = Math.random() * 100 + "vw";
+
+            heart.style.fontSize =
+                (12 + Math.random() * 16) + "px";
+
+            heart.style.animationDuration =
+                (7 + Math.random() * 7) + "s";
+
+            document.body.appendChild(heart);
+
+            setTimeout(() => {
+                heart.remove();
+            }, 15000);
+        }
+
+        setInterval(createHeart, 900);
+
+
+        /* Start button */
+
+        document
+            .getElementById("startButton")
+            .addEventListener("click", function () {
+
+                this.innerHTML = "LOADING...";
+
+                setTimeout(() => {
+
+                    alert(
+                        "♡ Birthday surprise initialized! ♡\n\n" +
+                        "Next, we'll unlock the memories..."
+                    );
+
+                }, 700);
+
+            });
+
+    </script>
+
+</body>
+</html>
