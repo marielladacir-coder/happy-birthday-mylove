@@ -368,13 +368,154 @@ document
 
             `;
 
-            document
-                .getElementById("gameButton")
-                .addEventListener("click", function () {
+         document
+    .getElementById("gameButton")
+    .addEventListener("click", function () {
 
-                    alert("GAME SCREEN COMING NEXT ♡");
+        document.body.innerHTML = `
 
-                });
+            <div class="screen">
+
+                <section class="terminal">
+
+                    <div class="terminal-top">
+                        <div class="dot"></div>
+                        <div class="dot"></div>
+                        <div class="dot"></div>
+
+                        <div class="terminal-title">
+                            birthday_surprise.exe
+                        </div>
+                    </div>
+
+                    <div class="content">
+
+                        <div class="system">
+                            &lt; MEMORY DATABASE /&gt;
+                        </div>
+
+                        <p class="memory-number">
+                            MEMORY 01 / 05
+                        </p>
+
+                        <h1 style="font-size: clamp(28px, 6vw, 48px);">
+                            OUR FIRST MEET ♡
+                        </h1>
+
+                        <img
+                            src="memory1.jpg"
+                            alt="Our first meet"
+                            style="
+                                width: min(90%, 500px);
+                                max-height: 520px;
+                                object-fit: cover;
+                                border-radius: 16px;
+                                border: 1px solid #ff8fc7;
+                                box-shadow: 0 0 30px rgba(255, 143, 199, 0.25);
+                                margin: 20px auto;
+                            "
+                        >
+
+                        <p class="message">
+                            Do you remember when this happened?
+                        </p>
+
+                        <div style="
+                            display: grid;
+                            grid-template-columns: repeat(2, minmax(120px, 1fr));
+                            gap: 12px;
+                            width: min(90%, 420px);
+                            margin: 20px auto;
+                        ">
+
+                            <button class="answer" data-correct="false">
+                                JANUARY
+                            </button>
+
+                            <button class="answer" data-correct="true">
+                                FEBRUARY
+                            </button>
+
+                            <button class="answer" data-correct="false">
+                                MARCH
+                            </button>
+
+                            <button class="answer" data-correct="false">
+                                APRIL
+                            </button>
+
+                        </div>
+
+                        <div id="result" style="
+                            min-height: 70px;
+                            margin-top: 15px;
+                        "></div>
+
+                    </div>
+
+                </section>
+
+            </div>
+
+        `;
+
+        const answers = document.querySelectorAll(".answer");
+        const result = document.getElementById("result");
+
+        answers.forEach(button => {
+
+            button.addEventListener("click", function () {
+
+                if (this.dataset.correct === "true") {
+
+                    result.innerHTML = `
+                        <p style="
+                            color: #ff9ccc;
+                            font-size: 18px;
+                        ">
+                            ✓ MEMORY RECOVERED
+                        </p>
+
+                        <p class="message">
+                            February 17. ♡
+                            <br>
+                            The day we finally met.
+                        </p>
+
+                        <button class="button" id="nextMemory">
+                            NEXT MEMORY →
+                        </button>
+                    `;
+
+                    answers.forEach(btn => {
+                        btn.disabled = true;
+                        btn.style.opacity = "0.5";
+                    });
+
+                    this.style.opacity = "1";
+
+                } else {
+
+                    result.innerHTML = `
+                        <p style="
+                            color: #ff8fb8;
+                            font-size: 18px;
+                        ">
+                            ✗ NOT QUITE...
+                        </p>
+
+                        <p class="message">
+                            Hmm. Try again. ♡
+                        </p>
+                    `;
+
+                }
+
+            });
+
+        });
+
+    });
 
         }, 700);
 
