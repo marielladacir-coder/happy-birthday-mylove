@@ -720,7 +720,10 @@
 
                         document
                             .getElementById("nextMemory2")
-                            .addEventListener("click", showMemory3);
+                            .addEventListener("click", function() {
+        alert("BUTTON WORKS!");
+        showMemory3();
+    });
 
                     } else {
 
