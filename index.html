@@ -494,6 +494,9 @@ document
                     });
 
                     this.style.opacity = "1";
+                    document
+                        .getElementById("nextMemory")
+                        .addEventListener("click", showMemory2);
 
                 } else {
 
@@ -520,9 +523,181 @@ document
 
         }, 700);
 
-    });
+        });
 
-    </script>
+
+    function showMemory2() {
+
+        document.body.innerHTML = `
+            <div class="screen">
+
+                <div class="terminal">
+
+                    <div class="terminal-top">
+                        <span>●</span>
+                        <span>●</span>
+                        <span>●</span>
+                    </div>
+
+                    <div class="content">
+
+                        <div class="system">
+                            MEMORY 02 / 05
+                        </div>
+
+                        <h1>
+                            A SPECIAL DAY ♡
+                        </h1>
+
+                        <p class="message">
+                            MEMORY FILE PARTIALLY ENCRYPTED...
+                            <br>
+                            Identify the occasion to recover it.
+                        </p>
+
+                        <div style="
+                            width: 100%;
+                            max-width: 360px;
+                            height: 360px;
+                            margin: 25px auto;
+                            overflow: hidden;
+                            border-radius: 15px;
+                        ">
+                            <img
+                                src="memory2.jpg"
+                                style="
+                                    width: 100%;
+                                    height: 100%;
+                                    object-fit: cover;
+                                    transform: scale(1.8);
+                                "
+                            >
+                        </div>
+
+                        <p class="message">
+                            WHAT WAS THIS SPECIAL DAY?
+                        </p>
+
+                        <div id="memory2Choices">
+
+                            <button class="button memory2Choice">
+                                RECOGNITION
+                            </button>
+
+                            <button class="button memory2Choice">
+                                PAPA'S DEATH ANNIVERSARY
+                            </button>
+
+                            <button class="button memory2Choice">
+                                ORDINARY VISIT
+                            </button>
+
+                            <button class="button memory2Choice">
+                                BIRTHDAY
+                            </button>
+
+                        </div>
+
+                        <div id="memory2Result"></div>
+
+                    </div>
+
+                </div>
+
+            </div>
+        `;
+
+        const choices = document.querySelectorAll(".memory2Choice");
+        const result = document.getElementById("memory2Result");
+
+        choices.forEach(choice => {
+
+            choice.addEventListener("click", function () {
+
+                choices.forEach(btn => {
+                    btn.disabled = true;
+                    btn.style.opacity = "0.5";
+                });
+
+                if (this.innerText === "RECOGNITION") {
+
+                    result.innerHTML = `
+                        <p style="
+                            color: #ff8fb8;
+                            font-size: 18px;
+                        ">
+                            ✓ MEMORY RECOVERED
+                        </p>
+
+                        <img
+                            src="memory2.jpg"
+                            style="
+                                width: 100%;
+                                max-width: 500px;
+                                border-radius: 15px;
+                                margin: 20px auto;
+                                display: block;
+                            "
+                        >
+
+                        <p class="message">
+                            May 11. ♡
+                            <br><br>
+
+                            This wasn't just my recognition day.
+                            <br><br>
+
+                            It was the first time I ever brought a guy home.
+                            You met Mama that day, and before we went to school
+                            for my recognition, you insisted on going with me
+                            to visit Papa first.
+                            <br><br>
+
+                            I don't think you know how much that meant to me.
+                            <br><br>
+
+                            You didn't just want to celebrate my achievement
+                            with me. You also wanted to show respect to someone
+                            who was important to me.
+                            <br><br>
+
+                            Thank you for that. ♡
+                        </p>
+
+                        <button class="button" id="nextMemory2">
+                            NEXT MEMORY →
+                        </button>
+                    `;
+
+                    document
+                        .getElementById("nextMemory2")
+                        .addEventListener("click", showMemory3);
+
+                } else {
+
+                    result.innerHTML = `
+                        <p style="
+                            color: #ff8fb8;
+                            font-size: 18px;
+                        ">
+                            ✗ NOT QUITE...
+                        </p>
+
+                        <p class="message">
+                            Look closely...
+                            <br>
+                            You know this one. ♡
+                        </p>
+                    `;
+
+                }
+
+            });
+
+        });
+
+    }
+</script>
 
 </body>
 </html>
