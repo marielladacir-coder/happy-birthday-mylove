@@ -299,24 +299,86 @@
         setInterval(createHeart, 900);
 
 
-        /* Start button */
+      /* Start button */
 
-        document
-            .getElementById("startButton")
-            .addEventListener("click", function () {
+document
+    .getElementById("startButton")
+    .addEventListener("click", function () {
 
-                this.innerHTML = "LOADING...";
+        this.innerHTML = "LOADING...";
 
-                setTimeout(() => {
+        setTimeout(() => {
 
-                    alert(
-                        "♡ Birthday surprise initialized! ♡\n\n" +
-                        "Next, we'll unlock the memories..."
-                    );
+            document.body.innerHTML = `
 
-                }, 700);
+                <div class="screen">
 
-            });
+                    <section class="terminal">
+
+                        <div class="terminal-top">
+                            <div class="dot"></div>
+                            <div class="dot"></div>
+                            <div class="dot"></div>
+
+                            <div class="terminal-title">
+                                birthday_surprise.exe
+                            </div>
+                        </div>
+
+                        <div class="content">
+
+                            <div class="system">
+                                &lt; ACCESS GRANTED /&gt;
+                            </div>
+
+                            <div class="cake">
+                                ♡
+                            </div>
+
+                            <h1 style="font-size: clamp(32px, 7vw, 55px);">
+                                WELCOME, AKI
+                            </h1>
+
+                            <p class="message">
+                                Since I can't be there to celebrate
+                                with you today...
+                                <br><br>
+                                I wanted to make something
+                                a little different.
+                            </p>
+
+                            <p class="message">
+                                So I made you a little birthday game. ♡
+                            </p>
+
+                            <button class="button" id="gameButton">
+                                START GAME →
+                            </button>
+
+                            <div class="status">
+                                system.status:
+                                <span>waiting for player</span>
+                            </div>
+
+                        </div>
+
+                    </section>
+
+                </div>
+
+            `;
+
+            document
+                .getElementById("gameButton")
+                .addEventListener("click", function () {
+
+                    alert("GAME SCREEN COMING NEXT ♡");
+
+                });
+
+        }, 700);
+
+    });
 
     </script>
 
